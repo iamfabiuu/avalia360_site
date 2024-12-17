@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalia 360 - Informações do Aluno</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu -->
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Tela Inicial</a></li>
+        <li><a href="#">Configurações</a></li>
+        <li><a href="login.html">Sair</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <button onclick="changeLanguage('pt')">Português</button>
+      <button onclick="changeLanguage('es')">Español</button>
+    </div>
+    <header>
+      <h1>Avalia 360 - Informações do Aluno</h1>
+    </header>
+
+    <main>
+      <!-- Seletor de Aluno -->
+      <div class="seletor-aluno">
+        <label for="seletor">Selecionar Aluno: </label>
+        <select id="seletor" onchange="atualizarAluno()">
+          <option value="Roberval Júlio">Roberval Júlio</option>
+          <option value="Gustavo Fonseca">Gustavo Fonsêca</option>
+          <option value="Noah Vieira">Noah Vieira</option>
+          <option value="Hiberon da Silva">Hiberon da Silva</option>
+        </select>
+      </div>
+
+      <div class="info-aluno">
+        <h2 id="nome-aluno">Nome do Aluno: Roberval Júlio</h2>
+        <p id="rendimento-aluno">Rendimento: 85%</p>
+        <p id="aula-futura">Próxima Aula: Física - 14/11/2024</p>
+      </div>
+
+      <div class="graficos">
+        <div class="grafico">
+          <h3>Rendimento Geral</h3>
+          <canvas id="graficoRendimento"></canvas>
+        </div>
+        <div class="grafico">
+          <h3>Aulas Futuras</h3>
+          <canvas id="graficoAulasFuturas"></canvas>
+        </div>
+        <div class="grafico">
+          <h3>Rendimento nas Matérias</h3>
+          <canvas id="graficoRendimentoMateria"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
