@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/alunos.css" />
+    <link rel="shortcut icon" href="./scr/favicon.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=League+Gothic&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <title>Avalia 360</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./dashboard.html">
+        <img
+          src="./scr/Logo Página Inicial.png"
+          alt="Foto do Projeto"
+          class="project-photo"
+        />
+      </a>
+      <div class="menu-items">
+        <a href="./dashboard.html" class="menu-item">Início</a>
+        <a href="./alunos.html" class="menu-item">Alunos</a>
+        <a href="./provas.html" class="menu-item">Provas</a>
+      </div>
+      <div class="bottom-menu">
+        <a href="#" class="menu-item">Config</a>
+        <a href="./login.html" class="menu-item">Sair</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Turmas e Alunos</h1>
+
+      <!-- Seletor de turma -->
+      <select id="cursoSelect" class="turma-select" onchange="exibirAlunos()">
+        <option value="">Selecione uma turma</option>
+      </select>
+
+      <!-- Botão para adicionar aluno -->
+      <button onclick="abrirModalAdicionarAluno()">Adicionar Aluno</button>
+      <button onclick="exportarParaExcel()">Exportar para Excel</button>
+      <button onclick="ordenarAlunos()">Ordem Alfabética</button>
+
+      <!-- Área onde as informações da turma serão exibidas -->
+      <div id="turmaInfo" class="turma"></div>
+    </div>
+
+    <!-- Pop-up para adicionar ou editar aluno -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Adicionar Aluno</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Nome do aluno" />
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" placeholder="Matrícula do aluno" />
+        <button id="modalButton" onclick="salvarAluno()">Salvar</button>
+        <button onclick="fecharModal()">Fechar</button>
+      </div>
+    </div>
+
+    <script src="./script/alunos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../scr/papel\ de\ parede.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Jost", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Impede a rolagem devido aos círculos */
+  position: relative;
+}
+
+/* Círculos Animados no fundo */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgb(66, 66, 255); /* Cor dos círculos */
+  animation: moveCircles 10s infinite ease-in-out;
+}
+
+/* Criando movimento contínuo para os círculos */
+@keyframes moveCircles {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(50%, 50%) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Menu de círculos */
+.circle:nth-child(1) {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  left: 15%;
+}
+.circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 60%;
+  left: 30%;
+}
+.circle:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: 70%;
+}
+.circle:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 85%;
+}
+
+.login-container {
+  background: #e0f7fa;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+    -8px -8px 15px rgba(255, 255, 255, 0.7);
+  text-align: center;
+  width: 350px;
+  position: relative;
+  z-index: 2; /* Garante que a área de login fique acima dos círculos */
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: rgb(66, 66, 255); /* Azul escuro */
+}
+
+.input-field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #e0f7fa;
+  font-size: 16px;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+  color: rgb(66, 66, 255);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+.login-button {
+  background-color: rgb(66, 66, 255);
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: rgb(23, 23, 189); /* Azul escuro */
+}

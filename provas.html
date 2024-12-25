@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/provas.css" />
+    <link rel="shortcut icon" href="./scr/favicon.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=League+Gothic&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Provas</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./dashboard.html">
+        <img
+          src="./scr/Logo Página Inicial.png"
+          alt="Foto do Projeto"
+          class="project-photo"
+        />
+      </a>
+      <div class="menu-items">
+        <a href="./dashboard.html" class="menu-item">Início</a>
+        <a href="./alunos.html" class="menu-item">Alunos</a>
+        <a href="./provas.html" class="menu-item">Provas</a>
+      </div>
+      <div class="bottom-menu">
+        <a href="" class="menu-item">Config</a>
+        <a href="./login.html" class="menu-item">Sair</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="buttons-container">
+        <h1>Escolha uma opção</h1>
+        <button onclick="window.location.href='criar.html'">Criar Prova</button>
+        <button onclick="window.location.href='corrigir.html'">
+          Corrigir Prova
+        </button>
+        <button onclick="window.location.href='Ver.html'">Ver Provas</button>
+      </div>
+    </div>
+  </body>
+</html>
