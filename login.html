@@ -11,28 +11,31 @@
       href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=League+Gothic&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <title>Login - Avalia 360</title>
+    <title>Login</title>
   </head>
   <body>
-    <!-- Círculos Animados -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-
     <div class="login-container">
-      <h1>Login</h1>
-      <form>
-        <div class="input-field">
-          <input type="text" placeholder="Usuário" required />
+      <h1>Bem-vindo ao Avalia 360</h1>
+      <p>Pronto para transformar o aprendizado hoje?</p>
+      <form id="login-form" action="./dashboard.html">
+        <input type="text" id="username" placeholder="Usuário" required />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <div class="error-message" id="error-message">
+          Usuário ou senha incorretos!
         </div>
-        <div class="input-field">
-          <input type="password" placeholder="Senha" required />
-        </div>
-        <a href="./dashboard.html">
-          <button type="button" class="login-button">Entrar</button>
-        </a>
       </form>
+      <div class="assistant-bubble">
+        Dica: Use "admin" como usuário e senha para teste! 😄
+      </div>
     </div>
+
+    <img
+      src="./scr/Logo Página Inicial.png"
+      alt="Logo Avalia 360"
+      class="logo"
+    />
+
+    <script src="./script/login.js"></script>
   </body>
 </html>

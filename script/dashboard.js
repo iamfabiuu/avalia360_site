@@ -119,3 +119,6 @@ document.getElementById(
   "performanceChart",
   "deficitsChart"
 ).height = 300; // Altere para a altura que deseja
+
+const connectToDatabase = require("./database");
+connectToDatabase();
