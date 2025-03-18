@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(to right, #4242ff, #56ccf2);
+  font-family: "Jost", sans-serif;
+  background: linear-gradient(to right, #0d0058, #0400ff);
   color: rgb(255, 255, 255);
 }
 .container {

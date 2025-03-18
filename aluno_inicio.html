@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/aluno_inicio.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=League+Gothic&family=Outfit:wght@100..900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Avalia 360</title>
+    <link rel="shortcut icon" href="./scr/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <nav>
+      <a href="./dashboard.html">
+        <img
+          src="./scr/Logo Página Inicial.png"
+          alt="Foto do Projeto"
+          class="project-photo"
+        />
+      </a>
+      <div class="menu-items">
+        <a href="./dashboard.html" class="menu-item">Início</a>
+        <a href="./alunos.html" class="menu-item">Agenda</a>
+        <a href="./provas.html" class="menu-item">Atividades</a>
+        <a href="./provas.html" class="menu-item">Provas</a>
+      </div>
+      <div class="bottom-menu">
+        <a href="" class="menu-item">Config</a>
+        <a href="./login.html" class="menu-item">Sair</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- 1. Feed de Atividades e Conquistas -->
+      <section class="activity-feed">
+        <h3>Suas Conquistas e Atividades</h3>
+        <div class="activity-item">
+          <span class="activity-type">Medalha</span>
+          <p>
+            Você ganhou a medalha de "Estudioso" por completar 5 tarefas
+            seguidas!
+          </p>
+        </div>
+        <div class="activity-item">
+          <span class="activity-type">Progresso</span>
+          <p>Você concluiu a tarefa de Física. Nota: 9.0</p>
+        </div>
+        <div class="activity-item">
+          <span class="activity-type">Novo Conteúdo</span>
+          <p>
+            Uma nova aula de Matemática foi disponibilizada. Pronto para
+            aprender?
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Gamificação com Desafios e Níveis -->
+      <section class="gamification">
+        <h3>Desafios e Níveis</h3>
+        <div class="level-progress">
+          <p><strong>Nível Atual:</strong> Estudioso</p>
+          <div class="progress-bar">
+            <div style="width: 75%"></div>
+          </div>
+          <p>Progresso: 75%</p>
+        </div>
+        <div class="challenges">
+          <h4>Desafio da Semana</h4>
+          <p>Complete 3 tarefas de Matemática para ganhar pontos extras.</p>
+          <button class="btn">Iniciar Desafio</button>
+        </div>
+      </section>
+
+      <!-- 3. Perfil Personalizado do Aluno -->
+      <section class="student-profile">
+        <h3>Seu Perfil</h3>
+        <img
+          src="student-photo.jpg"
+          alt="Foto do Aluno"
+          class="profile-photo"
+          width="100"
+        />
+        <p><strong>Objetivos de Estudo:</strong></p>
+        <ul>
+          <li>Melhorar em Matemática.</li>
+          <li>Estudar 3 horas por semana para História.</li>
+        </ul>
+        <button class="btn">Editar Perfil</button>
+      </section>
+
+      <!-- 5. Calendário de Estudos -->
+      <section class="study-calendar">
+        <h3>Calendário de Estudos</h3>
+        <div class="calendar-container">
+          <div class="calendar-event">
+            <span class="event-date">10/03/2025</span>
+            <p><strong>Tarefa de Física</strong>: prazo final para entrega.</p>
+          </div>
+          <div class="calendar-event">
+            <span class="event-date">12/03/2025</span>
+            <p><strong>Prova de Matemática</strong>: prepare-se!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Modo de Estudo Personalizado -->
+      <section class="study-mode">
+        <h3>Modo de Estudo</h3>
+        <p>Escolha seu modo de estudo:</p>
+        <button class="btn">Modo Foco</button>
+        <button class="btn">Modo Pomodoro</button>
+      </section>
+
+      <!-- 8. Interface Adaptativa ao Desempenho -->
+      <section class="performance-feedback">
+        <h3>Seu Desempenho</h3>
+        <p>
+          Com base no seu desempenho, estamos ajustando a interface para te
+          apoiar mais. Como você tem se saído muito bem, sua interface está
+          cheia de cores para te motivar! Continue assim!
+        </p>
+      </section>
+
+      <!-- 9. Notificações em Tempo Real -->
+      <section class="notifications">
+        <h3>Notificações em Tempo Real</h3>
+        <div class="notification-item">
+          <p>
+            <strong>Nova Notificação:</strong> A tarefa de História foi
+            atualizada. Não perca o prazo!
+          </p>
+        </div>
+        <div class="notification-item">
+          <p>
+            <strong>Nova Notificação:</strong> Você ganhou 10 pontos extras por
+            concluir a atividade de Física!
+          </p>
+        </div>
+        <button class="btn">Ver Todas as Notificações</button>
+      </section>
+    </div>
+    <script src="./script/alunos_inicio.js"></script>
+  </body>
+</html>

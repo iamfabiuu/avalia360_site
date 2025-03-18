@@ -6,7 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(120deg, #1e40af, #4242ff, #56ccf2);
+  background: linear-gradient(120deg, #000f42, #000075, #0026ff);
   background-size: 200% 200%;
   animation: gradient 6s ease infinite;
   color: #f1f5f9;

@@ -5,9 +5,9 @@
 }
 
 body {
-  background: #ffffff; /* Fundo geral claro */
+  background: #121212; /* Fundo escuro */
   font-family: "Jost", sans-serif;
-  color: #333;
+  color: #ddd; /* Texto claro */
   margin: 0;
   display: flex;
 }
@@ -20,72 +20,83 @@ nav {
   justify-content: space-between;
   height: 100vh;
   width: 200px;
-  background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e; /* Fundo escuro para o menu */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 20px;
   box-sizing: border-box;
 }
+
 .project-photo {
   width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
 .menu-items {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .menu-item {
   text-decoration: none;
-  color: #333;
+  color: #ddd; /* Texto claro */
   font-size: 18px;
   padding: 10px;
   border-radius: 8px;
   transition: background-color 0.3s, color 0.3s;
 }
+
 .menu-item:hover {
   background-color: #007bff;
   color: #fff;
 }
+
 .bottom-menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .bottom-menu .menu-item {
   font-size: 16px;
-  color: #555;
+  color: #aaa; /* Cor mais suave */
 }
+
 .bottom-menu .menu-item:hover {
-  background-color: #f1f1f1;
-  color: #000;
+  background-color: #333;
+  color: #fff;
 }
 
 .container {
   margin-top: 50px;
   width: 900px;
   margin-left: 310px;
-  background: white;
+  background: #1c1c1c; /* Fundo escuro */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
 h1 {
   text-align: center;
-  color: #333;
+  color: #f2f2f2; /* Título mais suave */
 }
+
 .prova {
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #2a2a2a; /* Fundo mais escuro */
 }
+
 .prova h3 {
   margin: 0;
-  color: #555;
+  color: #ccc; /* Texto claro */
 }
+
 .prova button {
   margin-top: 10px;
   padding: 10px;
@@ -94,17 +105,21 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .btn-download {
   background-color: #007bff;
   color: white;
 }
+
 .btn-download:hover {
   background-color: #0056b3;
 }
+
 .btn-answers {
   background-color: #28a745;
   color: white;
 }
+
 .btn-answers:hover {
   background-color: #1e7e34;
 }

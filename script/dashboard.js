@@ -10,6 +10,10 @@ document.getElementById("students").addEventListener("change", function () {
   const chartsContainer = document.getElementById("chartsContainer");
   chartsContainer.classList.add("show");
 
+  // Exibe o botão de modificar dados após a seleção do aluno
+  const editButton = document.getElementById("editButton");
+  editButton.style.display = "block"; // Torna o botão visível
+
   // Atualiza os gráficos
   updateCharts(selectedName);
 });
@@ -24,7 +28,7 @@ function updateCharts(studentName) {
   const performanceCtx = performanceChart.getContext("2d");
   const deficitsCtx = deficitsChart.getContext("2d");
 
-  // Definindo dados de exemplo para os gráficos
+  // Dados padrão
   let gradesData = [70, 80, 90, 85, 95];
   let performanceData = [60, 70, 80, 75, 85];
   let deficitsData = [20, 30, 40, 35, 25];
@@ -50,9 +54,37 @@ function updateCharts(studentName) {
     window.performanceChartInstance.destroy();
   if (window.deficitsChartInstance) window.deficitsChartInstance.destroy();
 
-  // Gráfico de Notas
-  window.gradesChartInstance = new Chart(gradesCtx, {
-    type: "bar",
+  // Criar gráficos
+  window.gradesChartInstance = createChart(
+    gradesCtx,
+    "bar",
+    "Notas",
+    gradesData,
+    "#4CAF50",
+    "#388E3C"
+  );
+  window.performanceChartInstance = createChart(
+    performanceCtx,
+    "line",
+    "Desempenho",
+    performanceData,
+    "rgba(33, 150, 243, 0.2)",
+    "#2196F3"
+  );
+  window.deficitsChartInstance = createChart(
+    deficitsCtx,
+    "radar",
+    "Déficits",
+    deficitsData,
+    "rgba(255, 99, 132, 0.2)",
+    "#FF6384"
+  );
+}
+
+// Função para criar gráfico
+function createChart(ctx, type, label, data, bgColor, borderColor) {
+  return new Chart(ctx, {
+    type: type,
     data: {
       labels: [
         "1º Trimestre",
@@ -63,62 +95,152 @@ function updateCharts(studentName) {
       ],
       datasets: [
         {
-          label: "Notas",
-          data: gradesData,
-          backgroundColor: "#4CAF50",
-          borderColor: "#388E3C",
+          label: label,
+          data: data,
+          backgroundColor: bgColor,
+          borderColor: borderColor,
           borderWidth: 1,
-        },
-      ],
-    },
-  });
-
-  // Gráfico de Desempenho
-  window.performanceChartInstance = new Chart(performanceCtx, {
-    type: "line",
-    data: {
-      labels: [
-        "1º Trimestre",
-        "2º Trimestre",
-        "3º Trimestre",
-        "4º Trimestre",
-        "5º Trimestre",
-      ],
-      datasets: [
-        {
-          label: "Desempenho",
-          data: performanceData,
-          backgroundColor: "rgba(33, 150, 243, 0.2)",
-          borderColor: "#2196F3",
-          borderWidth: 2,
-        },
-      ],
-    },
-  });
-
-  // Gráfico de Áreas de Déficits
-  window.deficitsChartInstance = new Chart(deficitsCtx, {
-    type: "radar",
-    data: {
-      labels: ["Matemática", "Português", "Ciências", "História", "Geografia"],
-      datasets: [
-        {
-          label: "Déficits",
-          data: deficitsData,
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
-          borderColor: "#FF6384",
-          borderWidth: 2,
         },
       ],
     },
   });
 }
 
-document.getElementById(
-  "gradesChart",
-  "performanceChart",
-  "deficitsChart"
-).height = 300; // Altere para a altura que deseja
+// Criando o botão de editar dados e escondendo inicialmente
+const editButton = document.createElement("button");
+editButton.id = "editButton";
+editButton.textContent = "Modificar Dados";
+editButton.style.position = "fixed";
+editButton.style.top = "10px";
+editButton.style.right = "10px";
+editButton.style.display = "none"; // Inicialmente oculto
+editButton.style.padding = "10px 20px";
+editButton.style.backgroundColor = "#4CAF50";
+editButton.style.color = "#fff";
+editButton.style.border = "none";
+editButton.style.borderRadius = "5px";
+editButton.style.cursor = "pointer";
+editButton.style.transition = "all 0.3s ease";
+editButton.addEventListener("mouseover", function () {
+  this.style.backgroundColor = "#388E3C";
+});
+editButton.addEventListener("mouseout", function () {
+  this.style.backgroundColor = "#4CAF50";
+});
+document.body.appendChild(editButton);
 
-const connectToDatabase = require("./database");
-connectToDatabase();
+editButton.addEventListener("click", function () {
+  // Cria o fundo escuro e com blur
+  const blurBackground = document.createElement("div");
+  blurBackground.style.position = "fixed";
+  blurBackground.style.top = "0";
+  blurBackground.style.left = "0";
+  blurBackground.style.width = "100%";
+  blurBackground.style.height = "100%";
+  blurBackground.style.background = "rgba(0, 0, 0, 0.6)";
+  blurBackground.style.backdropFilter = "blur(5px)";
+  blurBackground.style.zIndex = "9998";
+  document.body.appendChild(blurBackground);
+
+  const popup = document.createElement("div");
+  popup.style.position = "fixed";
+  popup.style.top = "50%";
+  popup.style.left = "50%";
+  popup.style.transform = "translate(-50%, -50%)";
+  popup.style.padding = "20px";
+  popup.style.background = "#333"; // Fundo escuro
+  popup.style.borderRadius = "8px"; // Bordas arredondadas
+  popup.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)"; // Sombra suave
+  popup.style.maxWidth = "400px"; // Largura máxima para não esticar muito
+  popup.style.width = "100%"; // Responsivo
+  popup.style.zIndex = "9999"; // Garantir que fique acima dos outros elementos
+  popup.style.fontFamily = "'Just', sans-serif"; // Fonte consistente
+  popup.style.color = "#fff"; // Cor de texto
+  popup.style.border = "1px solid #444"; // Bordas sutis
+  popup.style.transition = "all 0.3s ease-in-out";
+
+  popup.innerHTML = `
+    <h2 style="font-size: 18px; margin-bottom: 20px; color: #fff;">Modificar Dados</h2>
+    <label style="display: block; margin-bottom: 10px; color: #ccc;">Notas: 
+      <input id="gradesInput" type="text" value="${window.gradesChartInstance.data.datasets[0].data.join(
+        ","
+      )}" 
+             style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #555; border-radius: 4px; background-color: #444; color: #fff;">
+    </label>
+    <label style="display: block; margin-bottom: 10px; color: #ccc;">Desempenho: 
+      <input id="performanceInput" type="text" value="${window.performanceChartInstance.data.datasets[0].data.join(
+        ","
+      )}" 
+             style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #555; border-radius: 4px; background-color: #444; color: #fff;">
+    </label>
+    <label style="display: block; margin-bottom: 20px; color: #ccc;">Déficits: 
+      <input id="deficitsInput" type="text" value="${window.deficitsChartInstance.data.datasets[0].data.join(
+        ","
+      )}" 
+             style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #555; border-radius: 4px; background-color: #444; color: #fff;">
+    </label>
+    <div style="display: flex; justify-content: space-between;">
+      <button id="saveChanges" style="padding: 8px 16px; background-color: #4CAF50; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        Salvar
+      </button>
+      <button id="closePopup" style="padding: 8px 16px; background-color: #f44336; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
+        Fechar
+      </button>
+    </div>
+  `;
+  document.body.appendChild(popup);
+
+  // Estilo de hover nos botões
+  document
+    .getElementById("saveChanges")
+    .addEventListener("mouseover", function () {
+      this.style.backgroundColor = "#388E3C";
+    });
+  document
+    .getElementById("saveChanges")
+    .addEventListener("mouseout", function () {
+      this.style.backgroundColor = "#4CAF50";
+    });
+
+  document
+    .getElementById("closePopup")
+    .addEventListener("mouseover", function () {
+      this.style.backgroundColor = "#D32F2F";
+    });
+  document
+    .getElementById("closePopup")
+    .addEventListener("mouseout", function () {
+      this.style.backgroundColor = "#f44336";
+    });
+
+  document.getElementById("saveChanges").addEventListener("click", function () {
+    const newGrades = document
+      .getElementById("gradesInput")
+      .value.split(",")
+      .map(Number);
+    const newPerformance = document
+      .getElementById("performanceInput")
+      .value.split(",")
+      .map(Number);
+    const newDeficits = document
+      .getElementById("deficitsInput")
+      .value.split(",")
+      .map(Number);
+
+    window.gradesChartInstance.data.datasets[0].data = newGrades;
+    window.performanceChartInstance.data.datasets[0].data = newPerformance;
+    window.deficitsChartInstance.data.datasets[0].data = newDeficits;
+
+    window.gradesChartInstance.update();
+    window.performanceChartInstance.update();
+    window.deficitsChartInstance.update();
+
+    document.body.removeChild(popup);
+    document.body.removeChild(blurBackground); // Remove o fundo escuro
+  });
+
+  document.getElementById("closePopup").addEventListener("click", function () {
+    document.body.removeChild(popup);
+    document.body.removeChild(blurBackground); // Remove o fundo escuro
+  });
+});

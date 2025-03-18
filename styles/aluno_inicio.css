@@ -1,0 +1,269 @@
+/* Reset e Configuração Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212; /* Fundo escuro */
+  font-family: "Jost", sans-serif;
+  color: #e0e0e0; /* Texto claro */
+  margin: 0;
+  display: flex;
+  flex-direction: row; /* Para o menu fixo e o conteúdo lado a lado */
+  min-height: 100vh;
+}
+
+/* Menu lateral */
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 200px;
+  background-color: #1e1e1e; /* Fundo escuro do menu */
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.bottom-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom-menu .menu-item {
+  font-size: 16px;
+  color: #b0b0b0;
+}
+
+.bottom-menu .menu-item:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Container Principal */
+.container {
+  margin-left: 220px; /* Espaço para o menu fixo */
+  padding: 20px;
+  width: calc(
+    100% - 220px
+  ); /* Garantir que o conteúdo ocupe o restante da tela */
+  overflow-y: auto;
+}
+
+/* 1. Feed de Atividades e Conquistas */
+.activity-feed {
+  margin-bottom: 40px;
+}
+
+.activity-feed h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.activity-item {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.activity-type {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* 2. Gamificação com Desafios e Níveis */
+.gamification {
+  margin-bottom: 40px;
+}
+
+.gamification h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.level-progress {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.progress-bar {
+  background: #333;
+  border-radius: 5px;
+  height: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  background-color: #007bff;
+  height: 100%;
+  width: 0; /* Ajustar via JS */
+}
+
+.challenges {
+  margin-top: 20px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.challenges h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* 3. Perfil Personalizado do Aluno */
+.student-profile {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.student-profile h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.student-profile ul {
+  list-style-type: none;
+}
+
+.student-profile li {
+  margin-bottom: 5px;
+}
+
+.student-profile button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* 5. Calendário de Estudos */
+.study-calendar {
+  margin-bottom: 40px;
+}
+
+.study-calendar h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-event {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.event-date {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* 7. Modo de Estudo Personalizado */
+.study-mode {
+  margin-bottom: 40px;
+}
+
+.study-mode h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.study-mode button {
+  margin-right: 10px;
+}
+
+/* 8. Interface Adaptativa ao Desempenho */
+.performance-feedback {
+  margin-bottom: 40px;
+}
+
+.performance-feedback h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* 9. Notificações em Tempo Real */
+.notifications {
+  margin-bottom: 40px;
+}
+
+.notifications h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.notification-item {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}

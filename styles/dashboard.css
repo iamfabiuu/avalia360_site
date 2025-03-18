@@ -1,3 +1,4 @@
+/* Reset e Configuração Geral */
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +6,9 @@
 }
 
 body {
-  background: #ffffff; /* Fundo geral claro */
+  background: #121212; /* Fundo escuro */
   font-family: "Jost", sans-serif;
-  color: #333;
+  color: #e0e0e0; /* Texto claro */
   margin: 0;
   display: flex;
 }
@@ -20,8 +21,8 @@ nav {
   justify-content: space-between;
   height: 100vh;
   width: 200px;
-  background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e; /* Fundo escuro do menu */
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -38,7 +39,7 @@ nav {
 }
 .menu-item {
   text-decoration: none;
-  color: #333;
+  color: #e0e0e0;
   font-size: 18px;
   padding: 10px;
   border-radius: 8px;
@@ -55,50 +56,48 @@ nav {
 }
 .bottom-menu .menu-item {
   font-size: 16px;
-  color: #555;
+  color: #b0b0b0;
 }
 .bottom-menu .menu-item:hover {
-  background-color: #f1f1f1;
-  color: #000;
+  background-color: #333;
+  color: #fff;
 }
 
 /* Seletor de alunos */
-/* Área do seletor */
 .selector-area {
   position: absolute;
-  top: 50px; /* Posição no canto superior */
-  left: 57%; /* Centralizado horizontalmente */
-  transform: translateX(-50%); /* Ajuste para alinhar ao centro */
+  top: 50px;
+  left: 57%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-/* Seletor */
 select {
   padding: 10px;
   font-size: 16px;
   border-radius: 10px;
   border: none;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1),
-    -3px -3px 5px rgba(255, 255, 255, 0.7);
-  background: #ffffff;
+  box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1),
+    -3px -3px 5px rgba(0, 0, 0, 0.7);
+  background: #1e1e1e;
+  color: #e0e0e0;
 }
 
 /* Nome do aluno */
 #studentName {
   font-size: 25px;
   font-weight: bold;
-  color: #007bff; /* Azul destaque */
+  color: #007bff;
   margin-top: 20px;
-  opacity: 0; /* Começa invisível */
-  transition: opacity 0.5s ease-in-out; /* Animação de fade-in */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* Estilo para visibilidade do nome */
 #studentName.show {
-  opacity: 1; /* Torna o nome visível */
+  opacity: 1;
 }
 
 /* Seções de gráficos */
@@ -108,8 +107,8 @@ select {
   justify-content: space-around;
   width: 100%;
   margin-top: 230px;
-  opacity: 0; /* Começam invisíveis */
-  transition: opacity 0.5s ease-in-out; /* Fade-in */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
   height: 430px;
 }
 
@@ -117,9 +116,10 @@ select {
   width: 30%;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   text-align: center;
-  background: #fff;
+  background: #1e1e1e;
+  color: #e0e0e0;
 }
 
 .chart-title {
@@ -127,9 +127,8 @@ select {
   margin-bottom: 10px;
 }
 
-/* Apenas quando o aluno for selecionado */
 .charts-container.show {
-  opacity: 1; /* Tornar visíveis */
+  opacity: 1;
 }
 
 /* Ajustes no layout */
@@ -142,5 +141,5 @@ select {
 .chart-container {
   width: 100%;
   max-width: 800px;
-  margin-bottom: 30px; /* Espaço abaixo dos gráficos */
+  margin-bottom: 30px;
 }

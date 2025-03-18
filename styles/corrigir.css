@@ -5,9 +5,9 @@
 }
 
 body {
-  background: #ffffff; /* Fundo geral claro */
+  background: #121212; /* Fundo escuro */
   font-family: "Jost", sans-serif;
-  color: #333;
+  color: #e0e0e0; /* Texto claro */
   margin: 0;
   display: flex;
 }
@@ -20,8 +20,8 @@ nav {
   justify-content: space-between;
   height: 100vh;
   width: 200px;
-  background-color: #ffffff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #1e1e1e; /* Cor escura para o menu */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.7);
   padding: 20px;
   box-sizing: border-box;
 }
@@ -38,7 +38,7 @@ nav {
 }
 .menu-item {
   text-decoration: none;
-  color: #333;
+  color: #e0e0e0; /* Texto claro */
   font-size: 18px;
   padding: 10px;
   border-radius: 8px;
@@ -55,24 +55,24 @@ nav {
 }
 .bottom-menu .menu-item {
   font-size: 16px;
-  color: #555;
+  color: #bbb;
 }
 .bottom-menu .menu-item:hover {
-  background-color: #f1f1f1;
-  color: #000;
+  background-color: #333;
+  color: #fff;
 }
 
 .container {
   width: 950px;
   margin-left: 290px;
-  background: white;
+  background: #1e1e1e; /* Fundo escuro */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 h1 {
   text-align: center;
-  color: #0054a3;
+  color: #00bcd4; /* Cor clara para o título */
 }
 select,
 button {
@@ -81,18 +81,21 @@ button {
   margin: 10px 0;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #444; /* Borda mais escura */
   border-radius: 4px;
+  background-color: #333; /* Fundo escuro */
+  color: #fff; /* Texto claro */
 }
 .question {
   margin-bottom: 20px;
   padding: 10px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: #333; /* Fundo escuro para a pergunta */
+  border: 1px solid #555; /* Borda mais suave */
   border-radius: 4px;
 }
 .question h3 {
   margin: 0 0 10px;
+  color: #e0e0e0; /* Texto claro */
 }
 .alternatives {
   list-style: none;
